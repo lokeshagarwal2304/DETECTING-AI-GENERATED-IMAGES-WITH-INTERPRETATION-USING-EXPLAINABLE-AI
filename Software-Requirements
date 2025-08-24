@@ -1,0 +1,102 @@
+# Software Requirements Specification (SRS)
+
+**Project Title**: *Detecting AI-Generated Images with Interpretation using Explainable AI*
+**Author**: Lokesh Agarwal
+**Date**: 2025
+
+---
+
+## 1. Introduction
+
+### 1.1 Purpose
+
+The purpose of this project is to develop a system capable of **detecting AI-generated images** and providing **interpretations using Explainable AI (XAI)**. The system will classify images as **real or AI-generated** and generate **visual explanations** for each decision, ensuring transparency, trust, and usability.
+
+### 1.2 Scope
+
+* Detect synthetic images created by GANs and diffusion models.
+* Provide **visual heatmaps** and **feature attributions** for predictions.
+* Support research in **deepfake detection, misinformation control, and digital forensics**.
+* Be modular, scalable, and extensible for academic and industrial use.
+
+---
+
+## 2. Functional Requirements
+
+1. **Image Classification**
+
+   * Input: An image (JPG/PNG).
+   * Output: Probability score (Real vs AI-Generated).
+
+2. **Explainability**
+
+   * Generate **heatmaps** (Grad-CAM) for CNN/Transformer models.
+   * Provide **feature importance** (SHAP, LIME).
+
+3. **Visualization Dashboard**
+
+   * Show predictions with explanations.
+   * Compare **original vs highlighted** regions.
+
+4. **Data Handling**
+
+   * Load and preprocess datasets (CelebA, ImageNet, StyleGAN, Stable Diffusion).
+   * Perform data augmentation.
+
+5. **Model Training & Evaluation**
+
+   * Support CNN and Transformer architectures.
+   * Evaluate using Accuracy, Precision, Recall, F1-score, ROC-AUC.
+
+---
+
+## 3. Non-Functional Requirements
+
+* **Performance**: The classifier should achieve **≥90% accuracy** on test datasets.
+* **Scalability**: Able to train on larger datasets with transfer learning.
+* **Usability**: Provide **intuitive visualization** for end-users.
+* **Security**: Prevent tampering with datasets and models.
+* **Maintainability**: Code should follow modular design principles.
+* **Compatibility**: Should run on Linux/Windows/MacOS with GPU support.
+
+---
+
+## 4. Hardware & Software Requirements
+
+### 4.1 Hardware Requirements
+
+* **Processor**: Intel i5/i7 or AMD equivalent (minimum 4 cores).
+* **Memory**: 16 GB RAM (recommended 32 GB for large datasets).
+* **GPU**: NVIDIA GPU with CUDA (GTX 1660 / RTX 2060 or higher).
+* **Storage**: Minimum 50 GB free space.
+
+### 4.2 Software Requirements
+
+* **Programming Language**: Python 3.9+
+* **Frameworks**:
+
+  * TensorFlow / PyTorch
+  * Scikit-learn
+  * LIME, SHAP, Grad-CAM
+* **Libraries**: NumPy, Pandas, OpenCV, Matplotlib, Seaborn
+* **Environment**: Jupyter Notebook / VS Code
+* **OS**: Windows 10+, Ubuntu 20.04+, macOS Monterey+
+
+---
+
+## 5. Constraints
+
+* Limited availability of high-quality labeled AI-generated datasets.
+* Computational cost of explainability methods (e.g., SHAP is slow on large models).
+* Model interpretability vs accuracy trade-off.
+
+---
+
+## 6. Future Enhancements
+
+* Extend to **video deepfake detection**.
+* Add **real-time inference** capability with web deployment.
+* Improve explainability with **attention visualization** for Transformers.
+* Expand datasets with **latest diffusion models (DALL·E 3, SDXL)**.
+
+---
